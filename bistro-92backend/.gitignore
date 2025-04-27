@@ -1,0 +1,8 @@
+# Ignore node_modules
+node_modules/
+
+# Optional: Other files to ignore (common for Node.js)
+.env           # Environment variables
+.DS_Store      # macOS junk
+npm-debug.log  # NPM logs
+/dist          # Built files (if using TypeScript, etc.)

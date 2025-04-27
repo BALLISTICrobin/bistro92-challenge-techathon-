@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "author": "721 19 Niloy Das Robin",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    {
+      "type": "board-ssd1306",
+      "id": "oled1",
+      "top": -92.86,
+      "left": 211.43,
+      "attrs": { "i2cAddress": "0x3c" }
+    },
+    {
+      "type": "wokwi-pushbutton-6mm",
+      "id": "btn1",
+      "top": 36.2,
+      "left": -144,
+      "attrs": { "color": "green", "xray": "1" }
+    },
+    {
+      "type": "wokwi-pushbutton-6mm",
+      "id": "btn2",
+      "top": 93.8,
+      "left": -144,
+      "attrs": { "color": "blue", "xray": "1" }
+    },
+    {
+      "type": "wokwi-pushbutton-6mm",
+      "id": "btn3",
+      "top": 161,
+      "left": -144,
+      "attrs": { "color": "yellow", "xray": "1" }
+    },
+    {
+      "type": "wokwi-pushbutton-6mm",
+      "id": "btn4",
+      "top": 209,
+      "left": -144,
+      "attrs": { "color": "red", "xray": "1" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "esp:3V3", "oled1:VCC", "green", [ "h-4.61", "v-153.6", "h259.2" ] ],
+    [ "esp:GND.1", "oled1:GND", "black", [ "h-23.81", "v-259.2", "h268.8" ] ],
+    [ "esp:21", "oled1:SDA", "green", [ "h33.64", "v-192", "h144" ] ],
+    [ "esp:22", "oled1:SCL", "green", [ "h244.84", "v-153.6", "h-76.8" ] ],
+    [ "btn1:1.r", "esp:4", "green", [ "v-48", "h260", "v153.6" ] ],
+    [ "btn2:1.r", "esp:5", "green", [ "v0", "h58.4", "v-124.8", "h182.4", "v144" ] ],
+    [ "btn3:1.r", "esp:18", "green", [ "v0", "h87.2", "v67.2", "h144", "v-124.8", "h-9.6" ] ],
+    [ "btn4:1.r", "esp:19", "green", [ "v0", "h58.4", "v28.8", "h192", "v-144" ] ],
+    [ "btn1:2.r", "esp:GND.1", "green", [ "h96.8", "v0.4", "h0", "v0", "h0", "v0", "h0", "v96" ] ],
+    [ "btn2:2.r", "esp:GND.1", "green", [ "h68", "v38.8" ] ],
+    [ "btn3:2.r", "esp:GND.1", "green", [ "h48.8", "v-28.4" ] ],
+    [ "btn4:2.r", "esp:GND.1", "green", [ "h77.6", "v-76.4" ] ]
+  ],
+  "dependencies": {}
+}
